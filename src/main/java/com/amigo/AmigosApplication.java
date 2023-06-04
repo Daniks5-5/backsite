@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 // @SpringBootApplication
-@ComponentScan(basePackages = "a=amigo")
+@ComponentScan(basePackages = "amigo")
 @Configuration
 @EnableAutoConfiguration
 @RestController
@@ -20,11 +20,12 @@ public class AmigosApplication {
 		
 	}
 	@GetMapping("/greet")
-	public String greet(){
+	public GreetResponse greet(){
 		
-		return "Hello world";
+		return new GreetResponse("Hello world");
 
 	}
+	record GreetResponse(String greet){}
 
 
 }
