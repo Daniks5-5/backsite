@@ -19,13 +19,14 @@ public class AmigosApplication {
 		SpringApplication.run(AmigosApplication.class, args);
 		
 	}
-	@GetMapping("/greet")
+	@GetMapping("/")
 	public GreetResponse greet(){
 		
 		return new GreetResponse("Hello world");
 
 	}
 	record GreetResponse(String greet){}
+
 
 
 }
